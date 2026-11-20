@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FinanceKu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <!-- Overlay untuk latar belakang saat sidebar mobile terbuka -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Container Utama Full Layar -->
+    <div class="app-container">
+
+        <!-- Bagian Header / Topbar Atas -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <!-- Tombol Hamburger Menu (Muncul di Layar Tablet & HP) -->
+                <button type="button" class="menu-toggle-btn" id="menuToggleBtn" onclick="toggleSidebar()" aria-label="Buka Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <div class="logo-box">◆</div>
+                <span class="logo-text">FINANCEKU</span>
+            </div>
+
+            <div class="topbar-center">
+                <h3 class="greeting">Hello, <span class="user-greeting-name">Mahasiswa</span></h3>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Cari catatan keuangan...">
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <span class="notif-icon" title="Notifikasi">🔔</span>
+                <div class="user-profile">
+                    <div class="avatar">M</div>
+                    <div class="user-info">
+                        <span class="user-name">Mahasiswa</span>
+                        <span class="user-id">Bina Sarana Informatika</span>    
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Bagian Bawah Header: Sidebar + Area Konten -->
+        <div class="main-wrapper">
+
+            <!-- Sidebar Menu Kiri (Responsif Desktop & Mobile Drawer) -->
+            <aside class="sidebar" id="appSidebar">
+                <!-- Header Sidebar Khusus Tampilan Mobile -->
+                <div class="sidebar-header-mobile">
+                    <div class="brand-badge-mobile">
+                        <div class="logo-box">◆</div>
+                        <span class="logo-text">FINANCEKU</span>
+                    </div>
+                    <button type="button" class="sidebar-close-btn" onclick="toggleSidebar()" aria-label="Tutup Menu">&times;</button>
+                </div>
+
+                <!-- Daftar Menu Navigasi -->
+                <ul class="menu-list" id="sidebarMenu">
+                    <li class="menu-item active" onclick="pilihMenu(this)">
+                        <span class="menu-icon">🏠</span>
+                        <span class="menu-text">Dashboard</span>
+                    </li>
+                    <li class="menu-item" onclick="pilihMenu(this)">
+                        <span class="menu-icon">➕</span>
+                        <span class="menu-text">Catat Keuangan</span>
+                    </li>
+                    <li class="menu-item" onclick="pilihMenu(this)">
+                        <span class="menu-icon">📋</span>
+                        <span class="menu-text">Riwayat Harian</span>
+                    </li>
+                    <li class="menu-item" onclick="pilihMenu(this)">
+                        <span class="menu-icon">🏷️</span>
+                        <span class="menu-text">Kategori</span>
+                    </li>
+                    <li class="menu-item" onclick="pilihMenu(this)">
+                        <span class="menu-icon">🧮</span>
+                        <span class="menu-text">Hitung Anggaran</span>
+                    </li>
+                    <li class="menu-item" onclick="pilihMenu(this)">
+                        <span class="menu-icon">📊</span>
+                        <span class="menu-text">Laporan</span>
+                    </li>
+                </ul>
+
+                <!-- Menu Bagian Bawah Sidebar -->
+                <ul class="menu-list menu-bottom">
+                    <li class="menu-item">
+                        <a href="/logout" class="logout-link">
+                            <span class="menu-icon">🚪</span>
+                            <span class="menu-text">Log out</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Area Konten Utama (Siap diisi konten responsif) -->
+            <main class="content-area">
+                <!-- Konten belum dibuat -->
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Script JS Responsif -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="../static/script.js"></script>
+</body>
+</html>
